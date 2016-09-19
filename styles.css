@@ -1,11 +1,16 @@
 img {
-    width: 24%;
+    width: 30%;
+}
+html {
+    height: 100%;
 }
 body {
     text-align: center;
     font-family: "Arial";
     font-size: 16px;
-    background-color: #2C2C2C;
+    height:100%;
+    /*background-color: /*#282828 grey;*/
+    /*#282828 #2C2C2C*/
 }
 p {
     font-size: 120%;
@@ -34,6 +39,8 @@ a {
 }
 section {
     color: white;
+    background-image:url("Moon.jpg");
+    background-size: cover;
     padding-top: 300px;
     padding-bottom: 30px;
     font-size: 100%;
@@ -56,6 +63,38 @@ section {
 
 .bottomCorner{
     width: 30%;
-    position:fixed;
-    left:0%;
+    height: 160 rm;
+    position:relative;
+    left:40%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('bImage.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax1{
+        /* The image used */
+    background-image: url('bImage.jpg');
+
+    /* Full height */
+    height: 50%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footerZone {
+        background-color:black;
 }
