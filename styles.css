@@ -1,7 +1,61 @@
 img {
-    width: 200px;
+    width: 24%;
 }
 body {
     text-align: center;
     font-family: "Arial";
+    font-size: 16px;
+    background-color: #2C2C2C;
+}
+p {
+    font-size: 120%;
+        color: white;
+}
+h1 {
+    font-size: 250%;
+        color: white;
+}
+footer {
+    border-top: 1px solid #ededed;
+    padding: 30px 0;
+    font-size: 90%;
+    color: white;;
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+}
+a {
+    color: white;
+    padding-top: 10px;
+    font-size: 100%;
+    padding-bottom: 10px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+section {
+    color: white;
+    padding-top: 300px;
+    padding-bottom: 30px;
+    font-size: 100%;
+}
+
+.test {
+    width: 50%;
+    height: 900px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+}
+
+.testText {
+    font-size:120%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right:15%;
+}
+
+.bottomCorner{
+    width: 30%;
+    position:fixed;
+    left:0%;
 }
