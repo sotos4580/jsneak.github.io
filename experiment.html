@@ -3,10 +3,23 @@
     <head>
         <link rel="stylesheet" href="Estyles.css"/>
         <title>?</title>
+        <script>
+            var audio = new Audio('XYZ.mp3');
+            
+            function handle(e){
+                if(e.keyCode === 13){
+                    e.preventDefault(); // Ensure it is only this code that rusn
+                    if(document.getElementById("DataPoint").value.toUpperCase() == "SOUNDS IN MY HEAD")
+                        {
+                            audio.play();
+                        }
+                    }
+                }
+        </script>
     </head>
     <body>
         <div class="introScreen">
-            <input type="text" placeholder="ENTER DATA POINT">
+            <input type="text" id="DataPoint" placeholder="ENTER DATA POINT" onkeypress="handle(event)">
         </div>
     </body>
 </html>
