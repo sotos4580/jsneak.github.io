@@ -12,9 +12,15 @@
                     e.preventDefault(); // Ensure it is only this code that rusn
                     if(document.getElementById("DataPoint").value.toUpperCase() == "SOUNDS IN MY HEAD")
                     {
+                            audio1.stop();
                             audio.play();
                     }else if(document.getElementById("DataPoint").value.toUpperCase() == "WE ARE RIGHT BEHIND YOU")
                     {
+                            audio.stop();
+                            audio1.addEventListener('ended', function() {
+                                this.currentTime = 0;
+                                this.play();
+                            }, false);
                             audio1.play();
                     }
                     }
