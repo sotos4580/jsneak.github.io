@@ -28,7 +28,8 @@ input[type=text] {
     left:40%;
     background: none;
     color: green;
-    text-align: center
+    text-align: center;
+    outline: none;
 }
 
 ::-webkit-input-placeholder {
