@@ -32,6 +32,7 @@ input[type=text] {
 
 ::-webkit-input-placeholder {
    color: Green;
+   text-align: center;
 }
 
 .introScreen{
