@@ -3,13 +3,13 @@
     <head>
         <link rel="stylesheet" href="Estyles.css"/>
         <title>?</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script>
+            /* global $ */
             var audio = new Audio('XYZ.mp3');
             var audio1 = new Audio("ZYX.mp3");
-            
-            function handle(e){
-                if(e.keyCode === 13){
-                    e.preventDefault(); // Ensure it is only this code that rusn
+        $(document).ready(function (){
+    		$('#DataPoint').bind("enterKey",function(e){
                     if(document.getElementById("DataPoint").value.toUpperCase() == "SOUNDS IN MY HEAD")
                     {
                             audio1.pause();
@@ -17,6 +17,7 @@
                             audio.play();
                     }else if(document.getElementById("DataPoint").value.toUpperCase() == "WE ARE RIGHT BEHIND YOU")
                     {
+                            setTimeout(function(){ document.getElementById("cText").innerHTML = "We're close." }, 3000);
                             audio.pause();
                             audio.currentTime = 0;
                             audio1.addEventListener('ended', function() {
@@ -25,13 +26,22 @@
                             }, false);
                             audio1.play();
                     }
-                    }
+            });
+            
+            $('#DataPoint').keyup(function(e){
+                if(e.keyCode == 13)
+                {
+                  $(this).trigger("enterKey");
                 }
+            });
+		});
+
         </script>
     </head>
     <body>
         <div class="introScreen">
-            <input type="text" id="DataPoint" placeholder="ENTER DATA POINT" onkeypress="handle(event)">
+            <input type="text" id="DataPoint" placeholder="ENTER DATA POINT">
         </div>
+        <p id="cText"></p>
     </body>
 </html>
