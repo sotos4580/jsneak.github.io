@@ -26,7 +26,7 @@ input[type=text] {
     position: absolute;
     top: 50%;
     left:40%;
-    background-color: black;
+    background: none;
     color: green;
 }
 
