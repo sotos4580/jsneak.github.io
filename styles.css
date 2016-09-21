@@ -41,7 +41,7 @@ a {
 }
 section {
     color: white;
-    background-image:url("Moon.jpg");
+    background-image:url("Images/Moon.jpg");
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 30px;
@@ -72,7 +72,7 @@ section {
 
 .parallax {
     /* The image used */
-    background-image: url('bImage.jpg');
+    background-image: url('Images/bImage.jpg');
 
     /* Full height */
     height: 100%;
@@ -85,7 +85,7 @@ section {
 }
 .parallax1{
         /* The image used */
-    background-image: url('bImage.jpg');
+    background-image: url('Images/bImage.jpg');
 
     /* Full height */
     height: 50%;
