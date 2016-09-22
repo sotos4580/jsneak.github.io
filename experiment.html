@@ -8,14 +8,16 @@
             /* global $ */
             var audio = new Audio('XYZ.mp3');
             var audio1 = new Audio("ZYX.mp3");
+            var GS = 0;
         $(document).ready(function (){
     		$('#DataPoint').bind("enterKey",function(e){
-                    if(document.getElementById("DataPoint").value.toUpperCase() == "SOUNDS IN MY HEAD")
+                    if(document.getElementById("DataPoint").value.toUpperCase() == "SOUNDS IN MY HEAD" || GS == 1)
                     {
                             audio1.pause();
                             audio1.currentTime = 0;
                             audio.play();
-                    }else if(document.getElementById("DataPoint").value.toUpperCase() == "WE ARE RIGHT BEHIND YOU")
+                    }
+                    if(document.getElementById("DataPoint").value.toUpperCase() == "WE ARE RIGHT BEHIND YOU" || GS == 1)
                     {
                             setTimeout(function(){ document.getElementById("cText").innerHTML = "We're close." }, 3000);
                             audio.pause();
@@ -25,9 +27,12 @@
                                 this.play();
                             }, false);
                             audio1.play();
-                    }else if(document.getElementById("DataPoint").value.toUpperCase() == "GET TO THE POINT")
+                    }
+                    if(document.getElementById("DataPoint").value.toUpperCase() == "GET TO THE POINT")
                     {
-                        $( "#IntroScreen" ).fadeTo( "slow" , 0, function() {
+                        GS++;
+                        document.getElementById("DataPoint").placeholder = "Good luck with that..."
+                        $( "#IntroScreen" ).fadeTo( 5000 , 0, function() {
                             document.getElementById("DataPoint").placeholder = "ENTER DATAPOINT"
                           });
                         //document.getElementById("IntroScreen").className = "test";
