@@ -14,6 +14,7 @@ body {
     background-size: cover;
     /*background-color: /*#282828 grey;*/
     /*#282828 #2C2C2C*/
+    
 }
 
 input[type=text] {
@@ -39,4 +40,15 @@ input[type=text] {
 
 .introScreen{
     text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("Images/Placebo.jpg") ;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.introScreenInput{
+    
 }

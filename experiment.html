@@ -25,22 +25,32 @@
                                 this.play();
                             }, false);
                             audio1.play();
+                    }else if(document.getElementById("DataPoint").value.toUpperCase() == "GET TO THE POINT")
+                    {
+                        $( "#IntroScreen" ).fadeTo( "slow" , 0, function() {
+                            document.getElementById("DataPoint").placeholder = "ENTER DATAPOINT"
+                          });
+                        //document.getElementById("IntroScreen").className = "test";
+                        //document.getElementById("IntroScreen").style.backgroundImage = "none";
                     }
+                    document.getElementById("DataPoint").value = "";
             });
             
             $('#DataPoint').keyup(function(e){
                 if(e.keyCode == 13)
                 {
                   $(this).trigger("enterKey");
-                }
+                }//git push
             });
 		});
 
         </script>
     </head>
     <body>
-        <div class="introScreen">
-            <input type="text" id="DataPoint" placeholder="ENTER DATA POINT">
+        <div id="IntroScreen" class="introScreen">
+        </div>
+        <div>
+            <input type="text" id="DataPoint" placeholder="Howdy, let's get started">
         </div>
         <p id="cText"></p>
     </body>
