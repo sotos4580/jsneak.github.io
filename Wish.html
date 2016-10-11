@@ -1,15 +1,24 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Upon a star</title>
-        <link rel="stylesheet" href="css/Wish.css"/>
-        <script type="text/javascript" src="ShootingStarClass.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                //$('#test').text("test");
-                var shootingStarObj = new ShootingStar( "body" );
-                    shootingStarObj.launch(1.5);
+  <head>
+    <title>Upon a star</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Wish.css"/>
+  </head>
+
+  <body class="stars">
+    <div id="ShootingStarParams"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/ShootingStarClass.js"></script>
+    <script type="text/javascript">
+    /*
+    ShootingStarClass from @manufosela
+    */
+      $( document ).ready( function(){
+        var shootingStarObj = new ShootingStar( "body" );
+            shootingStarObj.launch(1);
+
                 $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
                     $('#test').delay(2000).fadeOut(700,"linear",function(){
                         $('#test').text("Wishing upon shooting stars doesn't make them come true.");
@@ -28,12 +37,8 @@
                         })
                     })
                 })
-            });
-        </script>
-    </head>
-    <body>
-        <div id="s1">
-            <p id="test">...if we see shooting starts, what would you wish for, Punpun?</p>
-        </div>
-    </body>
+      });
+    </script>
+    <p id="test">...if we see shooting stars, what would you wish for, Punpun?</p>
+  </body>
 </html>
