@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Practice Quiz</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script>
+            var Answers = ["A","B","C","C","B","A"];//The correct answers to the question
+            var playerAnswers = [];//The answers the player chooses
+            var finalCount = [];
+            function checkCompletion()//Abstraction
+            {
+                var completion = false;
+                var tempAnswers = [];
+                for(i=0;i<6;i++)
+                {
+                    var selectValue = document.getElementById(i.toString()).value;
+                    if(selectValue == "")
+                    {
+                        completion = false;
+                        break;
+                    }else{
+                        tempAnswers.push(selectValue);
+                        completion = true;
+                    }
+                }
+                if(completion == true)
+                {
+                    playerAnswers = tempAnswers;
+                    checkAnswers();
+                }else{
+                    alert("Answer all the questions")
+                }
+            }
+            
+            function checkAnswers()
+            {
+                for(i=0;i<6;i++)
+                {
+                    if(playerAnswers[i] == Answers[i])
+                    {
+                        
+                    }
+                }
+            }
+            
+            function displayResults()
+            {
+                
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div id="Questions">
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="0">
+                    <option>
+                        
+                    </option>
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="1">
+                    <option>
+                        
+                    </option>                    
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="2">
+                    <option>
+                        
+                    </option>
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="3">
+                    <option>
+                        
+                    </option>
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="4">
+                    <option>
+                        
+                    </option>
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+            <div class="question_div">
+                Example
+            </div>
+                <div class="answers_div">
+                    <ol type="A">
+                      <li>Coffee</li>
+                      <li>Tea</li>
+                      <li>Milk</li>
+                    </ol>
+                </div>
+            <div class="select_div">
+                <select id="5">
+                    <option>
+                        
+                    </option>
+                    <option>
+                        A
+                    </option>
+                    <option>
+                        B
+                    </option>
+                    <option>
+                        C
+                    </option>
+                </select>
+            </div>
+        </div>
+        <input type="button" value="Finish" onClick="checkCompletion()">
+    </body>
+</html>

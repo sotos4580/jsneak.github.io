@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Upon a star</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Wish.css"/>
+  </head>
+
+  <body class="stars">
+    <div id="ShootingStarParams"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/ShootingStarClass.js"></script>
+    <script type="text/javascript">
+      $( document ).ready( function(){
+        var shootingStarObj = new ShootingStar( "body" );
+            shootingStarObj.launch(1.5);
+
+                $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                    $('#test').delay(2000).fadeOut(700,"linear",function(){
+                        $('#test').text("Wishing upon shooting stars doesn't make them come true.");
+                        $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                            $('#test').delay(2000).fadeOut(700,"linear",function(){
+                                $('#test').text("Right, but what if. What would you wish if they did...?");
+                                $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                                    $('#test').delay(2000).fadeOut(700,"linear",function(){
+                                        $('#test').text("I'd wish for shooting stars to disappear forever.");
+                                        $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                                            //Callback hell is over
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+      });
+    </script>
+    <p id="test">...if we see shooting stars, what would you wish for, Punpun?</p>
+  </body>
+</html>

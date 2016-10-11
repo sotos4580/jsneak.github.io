@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Upon a star</title>
+        <link rel="stylesheet" href="css/Wish.css"/>
+        <script type="text/javascript" src="ShootingStarClass.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('#test').text("test");
+                var shootingStarObj = new ShootingStar( "body" );
+                    shootingStarObj.launch(1.5);
+                $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                    $('#test').delay(2000).fadeOut(700,"linear",function(){
+                        $('#test').text("Wishing upon shooting stars doesn't make them come true.");
+                        $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                            $('#test').delay(2000).fadeOut(700,"linear",function(){
+                                $('#test').text("Right, but what if. What would you wish if they did...?");
+                                $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                                    $('#test').delay(2000).fadeOut(700,"linear",function(){
+                                        $('#test').text("I'd wish for shooting stars to disappear forever.");
+                                        $("#test").hide(0).delay(700).fadeIn(1000,"linear",function(){
+                                            //Callback hell is over
+                                        })
+                                    })
+                                })
+                            })
+                        })
+                    })
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div id="s1">
+            <p id="test">...if we see shooting starts, what would you wish for, Punpun?</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="hwimin.css"/>
+        <title>HWI MINNNNNN</title>
+        <script>
+            var audio = new Audio('rec_2s.mp3');
+            
+            function hwi()
+            {
+                audio.play();
+            }
+            
+            function hwiMin()
+            {
+                document.getElementById("HWI").src = "Lord.jpg"
+                document.getElementById("1").innerHTML = "WHEN YOUR TEAM IS FEEDING"
+                document.getElementById("2").innerHTML = "AND YOUR AGAINST A TITAN"
+                document.getElementById("3").innerHTML = "HWI MIN WILL VANQUISH THE OPPOSITION"
+            }
+        </script>
+    </head>
+    <body>
+        <p id="1">THE LIVING LEGEND</p>
+        <p id="2">LEVEL 1 GOD</p>
+        <p id="3">HWI MIN</p>
+        <img id="HWI" src="hwi.jpg" onClick="hwi()" onmouseover="hwiMin()">
+    </body>
+</html>

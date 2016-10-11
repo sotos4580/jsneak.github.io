@@ -7,7 +7,6 @@
             var Three;
             var Output = []
             var Hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F",10]
-            alert(255%16)
             function convertBaseToHex()
             {
                 
@@ -22,27 +21,32 @@
                 {
                     var temp = Math.floor(Test[i]/16)
                     var temp2 = Test[i]%16
-                    alert(temp)
-                    alert(temp2)
                     if(temp2 % 16 == temp2)
                     {
                         temp2 = temp2/16;
                     }
-                    Math.floor(temp2)
-                    alert(temp2 + "Again")
-                    var Final = temp +""+ temp2
+                    temp2 = Math.floor(temp2)
+                    if((temp+""+temp2).length > 1)
+                    {
+                        var Final = temp
+                    }else{
+                        var Final = temp +""+ temp2
+                    }
                     Output.push(Final)
                 }
-                alert(Output)
-                
-                document.body.style.backgroundColor = "#" + Output[0] + Output[1] + Output[3]
+                document.getElementById("P1").innerHTML = Hex[Output[0]] +''+Hex[Output[0]] 
+                document.getElementById("P2").innerHTML = Hex[Output[1]] +''+Hex[Output[1]]
+                document.getElementById("P3").innerHTML = Hex[Output[2]] +''+Hex[Output[2]] 
+                var X = "#"+Hex[Output[0]] + Hex[Output[0]] + Hex[Output[1]] + Hex[Output[1]] + Hex[Output[2]] + Hex[Output[2]]
+                document.body.style.backgroundColor = X
+                alert(X)
             }
         </script>
     </head>
     <body id="bodyTag">
-        <input type="number" id="1" min="0" max="255" placeholder="Type Number Here"/><p></p><br>
-        <input type="number" id="2" min="0" max="255" placeholder="Type Number Here"/><p></p><br>
-        <input type="number" id="3" min="0" max="255" placeholder="Type Number Here"/><p></p><br>
+        <input type="number" id="1" min="0" max="255" placeholder="Type Number Here"/><p id="P1"></p><br>
+        <input type="number" id="2" min="0" max="255" placeholder="Type Number Here"/><p id="P2"></p><br>
+        <input type="number" id="3" min="0" max="255" placeholder="Type Number Here"/><p id="P3"></p><br>
         <input type="button" value="Convert" onClick="convertBaseToHex()"/>
     </body>
 </html>

@@ -16,7 +16,7 @@ body {
 }
 p {
     font-size: 120%;
-        color: white;
+        color: black;
 }
 h1 {
     font-size: 250%;
@@ -39,7 +39,7 @@ a {
     padding-left:10px;
     padding-right: 10px;
 }
-section {
+.CatSection {
     color: white;
     background-image:url("Images/Moon.jpg");
     background-size: cover;
@@ -99,4 +99,24 @@ section {
 
 .footerZone {
         background-color:black;
+}
+
+#about{
+    background-color: black;
+    margin: 0;
+    text-align: center;
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-position: 100% 60%;
+    background-size: 1300px;
+    display: block;
+}
+
+.about_div{
+}
+
+.left{
+  margin-left: 2%;
+  margin-right: 2%;
+  color:white;
 }

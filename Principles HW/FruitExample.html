@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>The Fruit Store</title>
+        <link id="cssPlace" rel="stylesheet" href="css/Pink.css"/>
+        
+        <script>
+            var fruitArray = ["pomegranates","bananas","oranges","apples","grapes"];
+            var priceArray = [1.99,0.29,2.99,3.29,3.99];
+            var ShoppingCartItem = [];
+            var ShoppingCartQuantity = [];
+            
+            function sortFruit()
+            {
+                for(i=fruitArray.length; i>1;i--)
+                {
+                    for(j=0;j<i-1;j++)
+                    {
+                        if(fruitArray[j] > fruitArray[j+1])
+                        {
+                            holdword = fruitArray[j]
+                            holdprice = priceArray[j]
+                            fruitArray[j]=fruitArray[j+1]
+                            priceArray[j]=priceArray[j+1]
+                            fruitArray[j+1] = holdword
+                            priceArray[j+1] = holdprice
+                        }
+                    }
+                }
+            }
+            
+            function sortPrice()
+            {
+                for(i=fruitArray.length; i>1;i--)
+                {
+                    for(j=0;j<i-1;j++)
+                    {
+                        if(priceArray[j] > priceArray[j+1])
+                        {
+                            holdword = fruitArray[j]
+                            holdprice = priceArray[j]
+                            fruitArray[j]=fruitArray[j+1]
+                            priceArray[j]=priceArray[j+1]
+                            fruitArray[j+1] = holdword
+                            priceArray[j+1] = holdprice
+                        }
+                    }
+                }
+            }
+            
+            function displayFruit()
+            {
+                var outputItems = "<h1>Inventory</h1>"
+                for(i=0; i<fruitArray.length;i++)
+                {
+                    outputItems += fruitArray[i] + " at $" + priceArray[i] + " per pounds.<br>"
+                }
+                document.getElementById("divId").innerHTML = outputItems;
+            }
+            
+            function addFruit()
+            {
+                if(document.getElementById("enterFruit").value || document.getElementById("enterPrice").value != "")
+                {
+                    fruitArray.push((document.getElementById("enterFruit").value).toLowerCase());
+                    priceArray.push(document.getElementById("enterPrice").value);
+                }
+            }
+            
+            function changeCSS()
+            {
+                document.getElementById('cssPlace').setAttribute('href', "css/"+document.getElementById("styleSelect").value+".css");
+            }
+            
+            function addToCart()
+            {
+                Item = document.getElementById("addToCart").value;
+                Num = document.getElementById("numToCart").value;
+                if(Item || Num != "")
+                {
+                    if(fruitArray.indexOf(Item) != -1)
+                    {
+                        pos = fruitArray.indexOf(Item)
+                        ShoppingCartItem.push(fruitArray[pos]);
+                        ShoppingCartQuantity.push(Num);
+                        alert("You put " + Num + " " + Item + " in your cart.")
+                    }
+                }
+            }
+            
+            function checkOut()
+            {
+                var Total = 0
+                for(i=0;i < ShoppingCartItem.length; i++)
+                {
+                    Total += ShoppingCartQuantity[i]*(priceArray[(fruitArray.indexOf(ShoppingCartItem[i]))])
+                }
+                
+                var outputItems = "<h1>Checkout</h1>"
+                for(i=0; i<ShoppingCartItem.length;i++)
+                {
+                    outputItems += ShoppingCartQuantity[i] + " " + ShoppingCartItem[i] + "<br>"
+                }
+                document.getElementById("divId").innerHTML =  outputItems + "Total: $" + Total;
+            }
+        </script>
+</head>
+<body id="bodyId">
+    <h1>The Fruit Store</h1>
+    <input type="button" id="switchColor" value="Change style" onClick="changeCSS()">
+    <select id="styleSelect">
+        <option>Pink</option>
+        <option>Light Blue</option>
+        <option>Night</option>
+    </select><br>
+    <input type="button" id="btnSort" value="Sort By Name" onClick="sortFruit()">
+    <input type="button" id="btnPrice" value="Sort by price" onClick="sortPrice()">
+    <input type="button" id="btnDisp" value="Display Inventory" onClick="displayFruit()"><br>
+    <input type="text" id="enterFruit" placeholder="Enter a fruit">
+    <input type="number" id="enterPrice" placeholder="Enter a price">
+    <input type="button" id="btnAdd" value="Add Fruit" onClick="addFruit()"><br>
+    <input type="text" id="addToCart" placeholder="Add a fruit to the cart">
+    <input type="number" id="numToCart" placeholder="Number of fruit you want to buy">
+    <input type="button" id="btnCart" value="Add to Cart" onClick="addToCart()"><br>
+    <input type="button" id="btnCheckout" value="Checkout" onClick="checkOut()">
+    <div id="divId"></div>
+</body>
+</html>
